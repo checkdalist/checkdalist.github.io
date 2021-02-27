@@ -1,11 +1,10 @@
 var done = 0;
-var removeMode = -1;
 
 function returnId(id) {
 
     var element = document.getElementById(id);
 
-    if (removeMode == 1) {
+    if (element.classList.contains("remove")) {
         element.remove();
         length--;
         if (element.classList.contains("done")) {
@@ -34,6 +33,7 @@ function addMode() {
 }
 
 function add(input) {
+    remove("off");
     var title = document.getElementById("title");
     var main = document.getElementById("main");
     var div = document.createElement("div");
@@ -62,12 +62,18 @@ function add(input) {
     addMode.style.visibility = "hidden";
 }
 
-function remove() {
-    removeMode = removeMode * -1;
-
+function remove(input) {
     var main = document.getElementById("main");
     for (var i = 0; i < length; i++) {
-        main.children[i].classList.toggle("remove");
+        if (input == "off") {
+            if (main.children[i].classList.contains("remove")) {
+                main.children[i].classList.toggle("remove");
+                console.log(i)
+            }
+        }
+        else {
+            main.children[i].classList.toggle("remove");
+        }
     }
 }
 
