@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/styleSheet.css"/>
+    <meta charset="utf-8">
+    <script src="js/script.js"></script>
+    <title>index</title>
+  </head>
+  <body onload="load()">
+    <main id="main"></main>
+    <div id="addMode">
+      <h2>Add element</h3>
+      <input id="title" type="text" placeholder="title" value="" autocomplete="off" spellcheck="false">
+      <button onclick="add('')">add</button>
+    </div>
+    <menu>
+      <ul>
+        <li onclick="addMode()">➕</li>
+        <li onclick="remove()">➖</li>
+        <li onclick="edit()">✎</li>
+      </ul>
+    </menu>
+  </body>
+</html>
